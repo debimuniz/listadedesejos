@@ -1,0 +1,20 @@
+{% extends  'listadedesejos/base.html' %}
+
+{%block  title%} Listar Usuários {%endblock%}
+
+{%block cabecalho %} Listagem de usuários {%endblock%}
+
+{%block content%}
+    {% for usuario in usuarios %}
+    <ul>
+        <li>Nome: {{ usuario.nome }}</li>
+        <li>Sobrenome: {{ usuario.sobrenome }}</li>
+        <li>Email: {{ usuario.email }}</li>
+        <li><a href="http://localhost:8000/usuarios/editar_usuario/{{usuario.id}}">Editar</a></li>
+        <li><a href="http://localhost:8000/usuarios/deletar_usuario/{{usuario.id}}">Deletar</a></li>
+    </ul>
+
+
+    {% endfor %}
+<a href="http://localhost:8000/usuarios/editar_usuario/"><button id="botao">Editar usuario</button></a>
+{%endblock%}

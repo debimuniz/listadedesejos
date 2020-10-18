@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Editar Listas</h1>
+    <tr>
+
+        <form id="id_editar" method="post" action="">
+          {% csrf_token %}
+            <input type="hidden" name="user_id" value="{{user_id}}" />
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome"><br>
+            <label for="item1">Link:</label>
+            <input type="text" id="item1" name="item1"><br>
+            <label for="item2">Link:</label>
+            <input type="text" id="item2" name="item2"><br>
+            <label for="item3">Link:</label>
+            <input type="text" id="item3" name="item3"><br>
+            <label for="item4">Link:</label>
+            <input type="text" id="item4" name="item4"><br>
+            <label for="item5">Link:</label>
+            <input type="text" id="item5" name="item5"><br>
+        <input type="submit" name="acao" value="Enviar">
+        </form>
+      </div>
+    </tr>
+  </table>
+</div>
+<a href="http://localhost:8000/listas/listar_listas/"><button id="botao">Voltar para Lista de Listas</button></a>
+</body>
+</html>

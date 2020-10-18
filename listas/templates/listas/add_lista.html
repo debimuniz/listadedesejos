@@ -1,0 +1,38 @@
+{% extends  'listadedesejos/base.html' %}
+
+{%block  title%} Cadastrar Listas {%endblock%}
+
+{%block cabecalho %} Construção de listas {%endblock%}
+{%block content%}
+    <form class="formulario" action="" method="post">
+		{% csrf_token %}
+        <p>Faça aqui sua lista!</p>
+
+        <div class="field">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome da lista*" required>
+        </div>
+
+        <div class="field">
+            <label for="item1">Link:</label>
+            <input type="text" id="item1" name="item1">
+        </div>
+                <div class="field">
+            <label for="item2">Link:</label>
+            <input type="text" id="item2" name="item2">
+        </div>
+                <div class="field">
+            <label for="item3">Link:</label>
+            <input type="text" id="item3" name="item3">
+        </div>
+                <div class="field">
+            <label for="item4">Link:</label>
+            <input type="text" id="item4" name="item4">
+        </div>
+        <div class="field">
+            <label for="item5">Link:</label>
+            <input type="text" id="item5" name="item5">
+        </div>
+        <input type="submit" name="acao" value="Enviar">
+    </form>
+{%endblock%}

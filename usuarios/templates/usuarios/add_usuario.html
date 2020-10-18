@@ -1,0 +1,24 @@
+{% extends  'listadedesejos/base.html' %}
+
+{%block  title%} Cadastrar Usuários {%endblock%}
+
+{%block cabecalho %} Cadastro de usuários {%endblock%}
+{%block content%}
+    <form class="formulario" action="" method="post">
+		{% csrf_token %}
+        <p>Preencha aqui o seu cadastro</p>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome*" required><br>
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu Sobrenome"><br>
+            <label for="email">Seu E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu E-Mail*" required><br>
+            <label for="data_aniversario">Data de nascimento:</label>
+            <input type="date" id="data_aniversario" name="data_aniversario"><br>
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login" placeholder="Digite um login" required><br>
+            <label for="senha">Digite sua senha::</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
+        <input type="submit" name="acao" value="Enviar">
+    </form>
+{%endblock%}
