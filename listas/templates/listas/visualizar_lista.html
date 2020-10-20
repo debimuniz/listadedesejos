@@ -1,0 +1,19 @@
+{% extends  'listadedesejos/base.html' %}
+
+{%block  title%}Minhas Listas {%endblock%}
+
+{%block cabecalho %} Lista {{ lista.nome }} {%endblock%}
+
+{% block content %}
+<h3>Lista: {{lista.nome}}</h3>
+    <ul style='list-style-type: none'>
+        <li><b>Link:</b> {{ lista.item1}}</li>
+        <li><b>Link:</b> {{ lista.item2 }}</li>
+        <li><b>Link:</b> {{ lista.item3 }}</li>
+        <li><b>Link:</b> {{ lista.item4 }}</li>
+        <li><b>Link:</b> {{ lista.item5 }}</li>
+        <li><a href="http://localhost:8000/listas/editar_lista/{{lista.id}}">Editar</a></li>
+        <li><a href="http://localhost:8000/listas/deletar_lista/{{lista.id}}">Deletar</a></li>
+    </ul>
+
+{%endblock%}

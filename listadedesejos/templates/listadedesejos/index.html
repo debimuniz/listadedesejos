@@ -1,0 +1,12 @@
+{% extends 'listadedesejos/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="mid-section">
+    <img src="{% static 'images/listadedesejo.gif' %}" class="logo" alt="logo-gif">
+    <h2>Todos nós temos um desejo, compartilhe o seu!</h2>
+    <a id="criesuaconta" href="/usuarios/add_usuario/">Clique aqui para criar sua conta!</a>
+  </div>
+
+  <div class="bottom-section">
+{% endblock %}

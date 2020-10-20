@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="icon" href="{% static 'css/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="/">Página Inicial</a>
+    {% if request.session.username %}
+    <a href="/listas/listar_listas/">Minhas Listas</a>
+    <a href="/listas/add_lista/">Adicionar Lista</a>
+    <a href="/logout/">Logout</a>
+  {% else %}
+    <a href="/usuarios/add_usuario/">Criar Conta</a>
+    <a class="active" href="/login/">Login</a>
+  {% endif %}
+  </div>
+
+    <div class="container">
+      <h1>Digite seu nome de usuário e senha &#128522;</h1>
+      <h4>E continue a compartilhar seus desejos e presentes.</h4>
+      <hr>
+
+      <form action="" method="POST">
+          {% csrf_token %}
+
+        <div class="container">
+          <label for="uname"><b>Nome de usuário</b></label>
+          <input type="text" placeholder="Digite o seu nome de usuário" name="login" required>
+
+          <label for="psw"><b>Senha</b></label>
+          <input type="password" placeholder="Digite sua senha" name="password" required>
+        </div>
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Login</button>
+          <button type="button" class="cancelbtn">Cancel</button>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+
+</body>
+
+</html>

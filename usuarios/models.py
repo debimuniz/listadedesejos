@@ -15,6 +15,7 @@ class Usuario(models.Model):
     )
 
     login = models.CharField(
+        unique=True,
         max_length=255,
         null=False,
         blank=False

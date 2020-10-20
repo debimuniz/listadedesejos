@@ -1,16 +1,33 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{%block title%}Titulo padrão{%endblock%}</title>
-</head>
-<body>
-    <nav>
+<html lang="en" dir="ltr">
 
-    </nav>
-    <div style="background-color: red">{%block cabecalho%}Cabeçalho{%endblock%}</div>
-    <div id='content'>
-        {%block content%}Conteúdo{%endblock%}
-    </div>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Titulo Default{%endblock%}</title>
+  <link rel="icon" href="{% static 'css/favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="/">Página Inicial</a>
+    <!-- Mostrando os menus de acordo se o usuário estiver autenticado -->
+    {% if request.session.username %}
+      <a href="/listas/listar_listas/">Minhas Listas</a>
+      <a href="/listas/add_lista/">Adicionar Lista</a>
+      <a href="/logout/">Logout</a>
+    {% else %}
+      <a href="/usuarios/add_usuario/">Criar Conta</a>
+      <a href="/login/">Login</a>
+    {% endif %}
+    
+  </div>
+
+    {% block content %}{% endblock %}
+
+
 </body>
+
 </html>
+

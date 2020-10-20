@@ -1,11 +1,7 @@
 from django.shortcuts import render
 from .models import Usuario
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
-from django.http import JsonResponse, HttpResponseRedirect
-from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST, HTTP_404_NOT_FOUND
-from django.views.decorators.csrf import csrf_exempt
-from django.core import serializers
-import json
+from django.http import HttpResponseRedirect
 
 
 def listar_usuarios(request):
@@ -13,6 +9,9 @@ def listar_usuarios(request):
     return render(request, 'usuarios/listar_usuarios.html', context={'usuarios':usuarios})
 
 
+#
+# Adding a User
+#
 def add_usuario(request):
     if request.method == 'GET':
         return render(request, 'usuarios/add_usuario.html')
@@ -25,7 +24,7 @@ def add_usuario(request):
         email = request.POST['email']
         usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha, email=email)
         usuario.save()
-        return HttpResponseRedirect('/listas/add_lista')
+        return HttpResponseRedirect('/login')
 
 
 def editar_usuario(request, user_id):
