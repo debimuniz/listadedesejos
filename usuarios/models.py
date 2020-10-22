@@ -28,6 +28,7 @@ class Usuario(models.Model):
     )
 
     email = models.CharField(
+        unique=True,
         max_length=255,
         null=False,
         blank=False
