@@ -4,9 +4,9 @@
 
 {%block cabecalho %} Cadastro de usuários {%endblock%}
 {%block content%}
-    <form class="formulario" action="" method="post">
+    <form style="text-align:center;" class="formulario" action="" method="post">
 		{% csrf_token %}
-        <p><h3>Preencha aqui o seu cadastro</h3></p>
+        <p><b>Preencha aqui o seu cadastro!</b></p>
         <label for="nome"><b>Nome:</b></label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome*" required><br>
         <label for="sobrenome"><b>Sobrenome:</b></label>

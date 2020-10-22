@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
 
 <head>
@@ -14,7 +14,7 @@
     <a class="active" href="/">Página Inicial</a>
     <!-- Mostrando os menus de acordo se o usuário estiver autenticado -->
     {% if request.session.username %}
-      <a href="/listas/listar_listas/">Minhas Listas</a>
+      <a href="/listas/listar_listas/">Listas</a>
       <a href="/listas/add_lista/">Adicionar Lista</a>
       <a href="/logout/">Logout</a>
     {% else %}

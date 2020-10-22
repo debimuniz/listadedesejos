@@ -11,9 +11,6 @@ from django.core.exceptions import ObjectDoesNotExist
 #     password = forms.CharField(max_length=40)
 
 
-
-
-
 #
 # View para mostrar a landing page
 # 
@@ -37,12 +34,10 @@ def login(request):
             usuario = Usuario.objects.get(login=login)
             # Se o login for encontrado, então validar a senha.
             if usuario.senha == senha:
-                #return HttpResponse('login ok')
-                # TODO redirecionar para a página do usuário.
-                # Redirecionar para a página inicial
+                # TO DO redirecionar para a página do usuário.
                 request.session['username'] = login
                 request.session['auth'] = True
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/listas/listar_listas')
             else:
                 return HttpResponse('Usuario ou senha inválidos!')
         except ObjectDoesNotExist:

@@ -1,10 +1,9 @@
 {% extends  'listadedesejos/base.html' %}
-
-{%block  title%}Minhas Listas {%endblock%}
-
-{%block cabecalho %} Listar {%endblock%}
+{% load static %}
+{%block  title%}Listas {%endblock%}
 
 {% block content %}
+    <h1>&nbsp;Listas criadas:</h1><br>
     {% for lista in listas %}
     <ul style='list-style-type: none'>
         <li><a href="/listas/visualizar_lista/{{lista.id}}">{{ lista.nome }}</a></li>
