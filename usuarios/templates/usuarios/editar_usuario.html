@@ -7,7 +7,7 @@
 <body>
     <h1>Editar Usuários</h1>
     <tr>
-      <div class="formularioCadastro">
+      <div class="formularioCadastro" >
 
         <form id="id_editar" method="post" action="">
           {% csrf_token %}
@@ -20,6 +20,10 @@
         <div class="field">
             <label for="sobrenome">Sobrenome:</label>
             <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu Sobrenome">
+        </div>
+        <div class="field">
+            <label for="data_aniversario"><b>Data de nascimento:</b></label>
+            <input type="date" id="data_aniversario" name="data_aniversario"><br>
         </div>
         <div class="field">
             <label for="email">Seu E-Mail:</label>
