@@ -34,12 +34,13 @@ def editar_usuario(request, user_id):
         user_id = request.POST.get('user_id')
         nome = request.POST['nome']
         sobrenome = request.POST['sobrenome']
+        data_aniversario = request.POST['data_aniversario']
         login = request.POST['login']
         senha = request.POST['senha']
         email = request.POST['email']
 
         usuario = Usuario.objects.filter(id=user_id)
-        usuario.update(nome=nome, sobrenome=sobrenome, login=login, senha=senha, email=email)
+        usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha, email=email)
         return HttpResponseRedirect('/usuarios/listar')
 
 

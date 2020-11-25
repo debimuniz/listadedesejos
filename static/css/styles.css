@@ -4,9 +4,9 @@ body{
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #2eb8b8;
+  background-color: #28B873;
   overflow: hidden;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
 /* Style the links inside the navigation bar */
@@ -16,22 +16,22 @@ body{
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 27px;
-  font-family: "Dancing Script";
+  font-size: 20px;
+  font-family: "Josefin Sans";
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #2eb8b8;
   color: white;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
 .mid-section{
@@ -42,7 +42,7 @@ body{
   font-size: medium;
   top: 70px;
   font-size: 22px;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
 .bottom-section{
@@ -57,7 +57,7 @@ body{
   background-color: #1aa6b7;
   color: white;
   font-size: 20px;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
@@ -72,7 +72,7 @@ body{
   height: 500px;
   width: 50%;
   font-size: 20px;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
 .logo{
@@ -83,23 +83,23 @@ body{
 .heading{
   margin-left: 20px;
   margin-top: 30px;
-   font-family: "Dancing Script";
+   font-family: "Josefin Sans";
 }
 
 p, label{
   margin-left: 20px;
   margin-top: 30px;
   font-size: 27px;
-  font-family: "Dancing Script";
+  font-family: "Josefin Sans";
 }
 
-h1{font-family: "Dancing Script";font-size: 37px;}
+h1{font-family: "Josefin Sans";font-size: 37px;}
 
-h3{font-family: "Dancing Script";font-size: 27px;}
+h3{font-family: "Josefin Sans";font-size: 27px;}
 
-h4{font-family: "Dancing Script";font-size: 22px;}
+h4{font-family: "Josefin Sans";font-size: 22px;}
 
-ul{font-family: "Dancing Script";font-size: 22px;}
+ul{font-family: "Josefin Sans";font-size: 22px;}
 
 * {box-sizing: border-box}
 
@@ -134,26 +134,26 @@ button {
   width: 100%;
   opacity: 0.9;
   font-size: 20px;
-   font-family: "Dancing Script";
+   font-family: "Josefin Sans";
 }
 
 button:hover {
   opacity:1;
-   font-family: "Dancing Script";
+   font-family: "Josefin Sans";
 }
 
 /* Extra styles for the cancel button */
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
-   font-family: "Dancing Script";
+   font-family: "Josefin Sans";
 }
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn, {
   float: left;
   width: 50%;
-   font-family: "Dancing Script";
+   font-family: "Josefin Sans";
 }
 
 /* Add padding to container elements */
@@ -166,6 +166,13 @@ button:hover {
   content: "";
   clear: both;
   display: table;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Change styles for cancel button and signup button on extra small screens */

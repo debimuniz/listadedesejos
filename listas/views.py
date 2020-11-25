@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from .models import Lista
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseRedirect
-from django.core import serializers
 
 
 def listar_listas(request):
