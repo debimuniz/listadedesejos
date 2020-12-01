@@ -1,12 +1,16 @@
 from django.shortcuts import render
+
+from usuarios.models import Usuario
 from .models import Lista
 from django.http import HttpResponseRedirect
 
 
 def listar_listas(request):
-    #my_user = Usuario.objects.get(login=request.session['username'])
-    listas = Lista.objects.all()
-    return render(request, 'listas/listar_listas.html', context={'listas':listas})
+    user = Usuario.objects.get(login=request.session['username'])
+    user_id = user.id
+    listas = Lista.objects.filter(user_id=user_id)
+    return render(request, 'listas/listar_listas.html', context={'listas': listas})
+
 
 #
 # View para visualizar uma lista em particular
@@ -20,13 +24,15 @@ def add_lista(request):
     if request.method == 'GET':
         return render(request, 'listas/add_lista.html')
     elif request.method == 'POST':
+        username = Usuario.objects.get(login=request.session['username'])
+        user_id = username.id
         nome = request.POST['nome']
         item1 = request.POST['item1']
         item2 = request.POST['item2']
         item3 = request.POST['item3']
         item4 = request.POST['item4']
         item5 = request.POST['item5']
-        lista = Lista(nome=nome, item1=item1, item2=item2, item3=item3, item4=item4, item5=item5)
+        lista = Lista(user_id=user_id, nome=nome, item1=item1, item2=item2, item3=item3, item4=item4, item5=item5)
         lista.save()
         return HttpResponseRedirect('/listas/listar_listas')
 
@@ -37,7 +43,7 @@ def editar_lista(request, id):
         return render(request, 'listas/editar_lista.html', context={"lista": lista})
     elif request.method == 'POST':
         id = request.POST.get('id')
-        nome  = request.POST['nome']
+        nome = request.POST['nome']
         item1 = request.POST['item1']
         item2 = request.POST['item2']
         item3 = request.POST['item3']
@@ -53,6 +59,7 @@ def editar_lista(request, id):
         lista.item5 = item5
         Lista.save(lista)
         return HttpResponseRedirect('/listas/listar_listas')
+
 
 def deletar_lista(request, id):
     if request.method == 'GET':

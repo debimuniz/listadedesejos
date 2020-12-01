@@ -35,9 +35,7 @@ body{
 }
 
 .mid-section{
-  background-color: white;
-  height: 100px;
-  width: 100%;
+
   text-align: center;
   font-size: medium;
   top: 70px;
@@ -86,7 +84,7 @@ body{
    font-family: "Josefin Sans";
 }
 
-p, label{
+p, label, h2, h3{
   margin-left: 20px;
   margin-top: 30px;
   font-size: 27px;
@@ -181,3 +179,14 @@ button:hover {
     width: 100%;
   }
 }
+
+    .col-1_4{
+        width: 20%;
+        margin: 6%;
+        float: left;
+        text-align: center;
+    }
+
+    .col-1_4 img{
+        width: 80px;
+    }
