@@ -37,7 +37,7 @@ def login(request):
                 # TO DO redirecionar para a página do usuário.
                 request.session['username'] = login
                 request.session['auth'] = True
-                return HttpResponseRedirect('/listas/listar_listas')
+                return HttpResponseRedirect('/usuarios/home_usuario')
             else:
                 return HttpResponse('Usuario ou senha inválidos!')
         except ObjectDoesNotExist:

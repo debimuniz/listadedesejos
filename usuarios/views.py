@@ -1,3 +1,4 @@
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from .models import Usuario
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
@@ -6,7 +7,7 @@ from django.http import HttpResponseRedirect
 
 def listar_usuarios(request):
     usuarios = Usuario.objects.all()
-    return render(request, 'usuarios/listar_usuarios.html', context={'usuarios':usuarios})
+    return render(request, 'usuarios/listar_usuarios.html', context={'usuarios': usuarios})
 
 
 #
@@ -22,7 +23,9 @@ def add_usuario(request):
         login = request.POST['login']
         senha = request.POST['senha']
         email = request.POST['email']
-        usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha, email=email)
+        foto = request.FILES['foto']
+        usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
+                          email=email, foto=foto)
         usuario.save()
         return HttpResponseRedirect('/login')
 
@@ -40,7 +43,8 @@ def editar_usuario(request, user_id):
         email = request.POST['email']
 
         usuario = Usuario.objects.filter(id=user_id)
-        usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha, email=email)
+        usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
+                       email=email)
         return HttpResponseRedirect('/usuarios/listar')
 
 
@@ -50,3 +54,9 @@ def deletar_usuario(request, user_id):
         usuario.delete()
 
     return HttpResponseRedirect('/usuarios/listar')
+
+
+def home_usuario(request):
+    usuario = Usuario.objects.get(login=request.session['username'])
+    return render(request, 'usuarios/home_usuario.html', context={'usuario': usuario})
+

@@ -36,5 +36,7 @@ class Usuario(models.Model):
 
     data_aniversario = models.DateField()
 
+    foto = models.ImageField(blank=True, upload_to='pictures/%Y/%m/%d')
+
     def __str__(self):
         return self.nome

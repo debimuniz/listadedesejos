@@ -4,7 +4,7 @@
 
 {%block cabecalho %} Cadastro de usuários {%endblock%}
 {%block content%}
-    <form style="text-align:center;" class="formulario" action="" method="post">
+    <form style="text-align:center;" class="formulario" action="" enctype="multipart/form-data" method="post">
 		{% csrf_token %}
         <p><b>Preencha aqui o seu cadastro!</b></p>
         <label for="nome"><b>Nome:</b></label>
@@ -19,6 +19,7 @@
             <input type="text" id="login" name="login" placeholder="Digite um login" required><br>
         <label for="senha"><b>Digite sua senha:</b></label>
             <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
+            <input type="file" name="foto" id="picture">
         <input type="submit" name="acao" value="Enviar">
     </form>
 {%endblock%}
