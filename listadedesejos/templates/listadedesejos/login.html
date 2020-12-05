@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en" dir="ltr">
+{% extends  'listadedesejos/base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <link rel="icon" href="{% static 'css/favicon.ico' %}">
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
+{%block  title%} Login {%endblock%}
+
+{%block cabecalho %} Página de login {%endblock%}
+{%block content%}
 
 <body>
     <div class="container">
@@ -34,7 +30,6 @@
           <span class="psw">Esqueceu sua <a href="#">senha?</a></span>
         </div>
       </form>
-
+    </div>
 </body>
-
-</html>
+{%endblock%}

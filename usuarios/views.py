@@ -23,9 +23,13 @@ def add_usuario(request):
         login = request.POST['login']
         senha = request.POST['senha']
         email = request.POST['email']
-        foto = request.FILES['foto']
-        usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
-                          email=email, foto=foto)
+        if request.FILES:
+            foto = request.FILES['foto']
+            usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login,
+                              senha=senha, email=email, foto=foto)
+        else:
+            usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
+                          email=email)
         usuario.save()
         return HttpResponseRedirect('/login')
 
