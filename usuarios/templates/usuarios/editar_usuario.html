@@ -1,8 +1,7 @@
 {% extends 'listadedesejos/base.html' %}
 {% block content %}
     <h1>Editar Usuários</h1>
-      <div class="formularioCadastro" >
-        <form id="id_editar" method="post" action="">
+        <form class="formulario" method="post" enctype="multipart/form-data" action="">
           {% csrf_token %}
             <input type="hidden" name="user_id" value="{{user_id}}" />
        <div class="field">
@@ -29,9 +28,11 @@
             <label for="senha">Digite sua senha::</label>
             <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
         </div>
+            <label for="picture"><b>Escolha sua foto de perfil:</b></label>
+            <input type="file" style="margin:auto" name="foto" id="picture">
+        <br>
         <input type="submit" name="acao" value="Enviar">
         </form>
-      </div>
 <a href="http://localhost:8000/usuarios/listar/"><button id="botao">Voltar para Lista de Usuários</button></a>
 
 {% endblock %}

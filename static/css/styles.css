@@ -1,192 +1,98 @@
 body{
-  margin:0;
+background-color: #b556b2;
+
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #28B873;
-  overflow: hidden;
-  font-family: "Josefin Sans";
+.navbar{
+  background-color: #b556b2;
+  padding-left: 5rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: white;
+.container-fluid{
+  padding: 2% 0%
+}
+
+/* Navigation Bar */
+
+#navbar-logo{
+  height: 80px;
+}
+
+.navbar{
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand{
+  font-family: 'Lobster', cursive;
+  font-size: 2.2rem;
+}
+
+.nav-item{
+  padding: 0 0.3rem;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Heading */
+
+.first-section{
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+  background-color: #3750BE
+}
+
+/* Carousel Section */
+.carousel-item{
+  height: 600px;
+}
+
+/* Features Section */
+#features{
+  padding: 7% 15%;
+}
+
+.feature-box{
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: "Josefin Sans";
+  padding: 4%
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-  font-family: "Josefin Sans";
+/* Symbols Section */
+.icon{
+  color: #ff824c;
+  padding-bottom: 4%
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #2eb8b8;
+.icon:hover{
   color: white;
-  font-family: "Josefin Sans";
 }
 
-.mid-section{
+/* Footer Section */
 
+.white-section {
+  background-color: #fff;
   text-align: center;
-  font-size: medium;
-  top: 70px;
-  font-size: 22px;
-  font-family: "Josefin Sans";
+  padding: 3%
 }
 
-.bottom-section{
-  height: 180px;
-  width: 100%;
-  background-color: #1aa6b7;
-  position: absolute;
-  top: 800px;
+.social-icon {
+  margin: 20px 10px;
 }
 
-#criesuaconta {
-  background-color: #1aa6b7;
-  color: white;
-  font-size: 20px;
-  font-family: "Josefin Sans";
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+@media (max-width: 1028px) {
 
-.boxcriarconta{
-  margin-top: 70px;
-  margin-left: 50px;
-  padding-left: 40px;
-  padding-top: 50px;
-  height: 500px;
-  width: 50%;
-  font-size: 20px;
-  font-family: "Josefin Sans";
-}
-
-.logo{
-  height: 350px;
-  width: 350px;
-}
-
-.heading{
-  margin-left: 20px;
-  margin-top: 30px;
-   font-family: "Josefin Sans";
-}
-
-p, label, h2, h3{
-  margin-left: 20px;
-  margin-top: 30px;
-  font-size: 27px;
-  font-family: "Josefin Sans";
-}
-
-h1{font-family: "Josefin Sans";font-size: 37px;}
-
-h3{font-family: "Josefin Sans";font-size: 27px;}
-
-h4{font-family: "Josefin Sans";font-size: 22px;}
-
-ul{font-family: "Josefin Sans";font-size: 22px;}
-
-* {box-sizing: border-box}
-
-/* Full-width input fields */
-  input[type=text], input[type=password] {
-  /*width: 100%;*/
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #2eb8b8;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  font-size: 20px;
-   font-family: "Josefin Sans";
-}
-
-button:hover {
-  opacity:1;
-   font-family: "Josefin Sans";
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-   font-family: "Josefin Sans";
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn, {
-  float: left;
-  width: 50%;
-   font-family: "Josefin Sans";
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 15px;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-    width: 100%;
+  #title {
+    text-align: center;
   }
+
+  #footer{
+    text-align: center;
+  }
+
 }
-
-    .col-1_4{
-        width: 20%;
-        margin: 6%;
-        float: left;
-        text-align: center;
-    }
-
-    .col-1_4 img{
-        width: 80px;
-    }

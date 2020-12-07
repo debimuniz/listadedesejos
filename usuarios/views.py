@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .models import Usuario
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.http import HttpResponseRedirect
+from listas.models import Lista
 
 
 def listar_usuarios(request):
@@ -28,8 +29,8 @@ def add_usuario(request):
             usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login,
                               senha=senha, email=email, foto=foto)
         else:
-            usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
-                          email=email)
+            usuario = Usuario(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login,
+                              senha=senha, email=email)
         usuario.save()
         return HttpResponseRedirect('/login')
 
@@ -39,16 +40,21 @@ def editar_usuario(request, user_id):
         return render(request, 'usuarios/editar_usuario.html', context={"user_id": user_id})
     elif request.method == 'POST':
         user_id = request.POST.get('user_id')
+        usuario = Usuario.objects.filter(id=user_id)
+
         nome = request.POST['nome']
         sobrenome = request.POST['sobrenome']
         data_aniversario = request.POST['data_aniversario']
         login = request.POST['login']
         senha = request.POST['senha']
         email = request.POST['email']
-
-        usuario = Usuario.objects.filter(id=user_id)
-        usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login, senha=senha,
-                       email=email)
+        if request.FILES:
+            foto = request.FILES['foto']
+            usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login,
+                              senha=senha, email=email, foto=foto)
+        else:
+            usuario.update(nome=nome, sobrenome=sobrenome, data_aniversario=data_aniversario, login=login,
+                              senha=senha, email=email)
         return HttpResponseRedirect('/usuarios/listar')
 
 
@@ -63,4 +69,3 @@ def deletar_usuario(request, user_id):
 def home_usuario(request):
     usuario = Usuario.objects.get(login=request.session['username'])
     return render(request, 'usuarios/home_usuario.html', context={'usuario': usuario})
-

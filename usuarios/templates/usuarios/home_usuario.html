@@ -5,8 +5,11 @@
 {% block content %}
     <h1>Seja bem vindo(a), {{ usuario.nome }}</h1><br>
     {% if usuario.foto %}
-        <p>
-            <img src="{{ usuario.foto.url }}" style="max-width: 250px; height: auto;">
-        </p>
+    <center><img src="{{ usuario.foto.url }}" style="max-width: 250px; height: auto;"></center>
     {% endif %}
+    <br>
+    <h3 style="color:white">
+        Para visualizar suas listas, <a href="/listas/listar_listas/">clique aqui!</a>
+    </h3>
+    <br>
 {%endblock%}
