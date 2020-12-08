@@ -7,29 +7,46 @@
 
 <body>
     <div class="container">
-      <h1>Digite seu nome de usuário e senha &#128522;</h1>
-      <h4>E continue a compartilhar seus desejos e presentes.</h4>
-      <hr>
 
-      <form action="" method="POST">
+      <form action="" method="POST" class="login-form">
           {% csrf_token %}
-
-        <div class="container">
-          <label for="uname"><b>Nome de usuário:</b></label>
-          <input type="text" placeholder="Digite o seu nome de usuário" name="login" required>
-
-          <label for="psw"><b>Senha:</b></label>
-          <input type="password" placeholder="Digite sua senha" name="password" required>
+        <p>Digite seu nome de usuário e senha &#128522;</p>
+        <div class="txspace">
+          <input type="text" name="login">
+          <span data-placeholder="Usuário"></span>
         </div>
 
-        <div class="clearfix">
-          <button type="submit" class="signupbtn">Login</button>
+        <div class="txspace">
+          <input type="password" name="password">
+          <span data-placeholder="Senha"></span>
         </div>
 
-        <div class="container" style="background-color:#f1f1f1">
-          <span class="psw">Esqueceu sua <a href="#">senha?</a></span>
+        <input type="submit" class="logbtn" value="Login">
+
+        <div class="bottom-text">
+          Esqueceu sua <a href="#">senha?</a>
+        </div>
+        <div class="bottom-text">
+          Não tem uma conta? <a href="/usuarios/add_usuario/">Cadastre-se</a>
         </div>
       </form>
     </div>
+      <script type="text/javascript">
+      $(".txspace input").on("focus",function(){
+        $(this).addClass("focus");
+      });
+
+      $(".txspace input").on("blur",function(){
+        if($(this).val() == "")
+        $(this).removeClass("focus");
+      });
+      $(".logbtn").on("mouseover",function(){
+        $(this).css({opacity:'1'});
+      });
+      $(".logbtn").on("mouseout",function(){
+        $(this).css({opacity:'0.5'});
+      });
+
+      </script>
 </body>
 {%endblock%}
