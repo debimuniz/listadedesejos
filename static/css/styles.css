@@ -1,5 +1,15 @@
 body{
 background-color: #b556b2;
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+h4{
+  padding: 20px;
+  padding-top: 120px;
 
 }
 
@@ -48,9 +58,19 @@ background-color: #b556b2;
   background-color: #3750BE
 }
 
+/* below-navbar */
+.below-navbar{
+  background-color: white;
+}
+
 /* Carousel Section */
 .carousel-item{
   height: 600px;
+}
+
+/* table-list */
+.table-list{
+  .background-color: black;
 }
 
 /* Features Section */
@@ -71,6 +91,82 @@ background-color: #b556b2;
 
 .icon:hover{
   color: white;
+}
+
+/* Criar Lista */
+
+.criarlista{
+  padding-bottom: 70px;
+}
+
+.card{
+  margin-left: 30px;
+}
+
+#botaocriarlista{
+  position: absolute;
+  margin:2% 0%;
+}
+
+.form-select{
+  right: 10px;
+}
+
+/*Lista do perfil*/
+@import "compass/css3";
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#li-perfil {
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+#li-perfil:last-child {
+  border: none;
+}
+
+#li-perfil a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+#li-perfil a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+/* Página do usuário */
+
+.perfil-top-section{
+  padding: 3% 5%;
+}
+
+.fotodoperfil{
+  max-width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 3%;
+ }
+
+ .verticalRule{
+border-left: 6px solid white;
+height: 300px;
+position: absolute;
+left: 50%;
+margin-left: -3px;
 }
 
 /* Footer Section */
@@ -108,7 +204,7 @@ background-color: #b556b2;
   height: 580px;
   padding: 80px 40px;
   margin: 100px 0px;
-  border-radius: 10px;
+  border-radius: 40px;
   position: relative;
   transform: translate(110%, -20%);
 }

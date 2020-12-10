@@ -6,7 +6,8 @@
 {%block content%}
     <form style="text-align:center;" class="formulario" action="" enctype="multipart/form-data" method="post">
 		{% csrf_token %}
-        <p><b>Preencha aqui o seu cadastro!</b></p>
+        <h3>Preencha aqui o seu cadastro!</h3>
+        <br>
         <label for="nome"><b>Nome:</b></label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome*" required><br>
         <label for="sobrenome"><b>Sobrenome:</b></label>

@@ -1,39 +1,67 @@
 {% extends  'listadedesejos/base.html' %}
-
+{% load static %}
 {%block  title%} Cadastrar Listas {%endblock%}
 
 {%block cabecalho %} Construção de listas {%endblock%}
 {%block content%}
 
-    <form class="formulario" action="" method="post">
+
+  <div class="row lista">
+    <div class="col-md-6 criarlista">
+      <h1 class="big-heading">Crie sua lista de desejos!</h1>
+      <div class="row">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card text-center">
+              <img src="{% static 'images/economizetempo.jpg' %}" class="card-img-top" alt="imgeconomizetempo">
+              <div class="card-body">
+                <h5 class="card-title">Economize tempo!</h5>
+                <p class="card-text">Adicione seus itens e ideias em um único local conveniente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card text-center">
+              <img src="{% static 'images/depresentes.jpg' %}" class="card-img-top" alt="imgdepresentes">
+              <div class="card-body">
+                <h5 class="card-title">Dê ótimos presentes</h5>
+                <p class="card-text">Lembre-se das listas dos seus amigos e compartilhe as suas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 criarlista">
+      <form class="criar-lista" action="" method="post">
 		{% csrf_token %}
-        <h3>&nbsp;Faça aqui sua lista!</h3>
-
-        <div class="field">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" placeholder="Digite o nome da lista*" required>
+        <div class="col-12">
+          <label for="nome" class="form-label">Nome da lista</label>
+          <input type="text" class="form-control" id="nome" name="nome">
         </div>
-
-        <div class="field">
-            <label for="item1">Link:</label>
-            <input type="text" id="item1" name="item1">
+        <div class="col-12">
+          <label for="link1" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link1" name="item1" placeholder="Link">
         </div>
-                <div class="field">
-            <label for="item2">Link:</label>
-            <input type="text" id="item2" name="item2">
+        <div class="col-12">
+          <label for="link2" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link2" name="item2" placeholder="Link">
         </div>
-                <div class="field">
-            <label for="item3">Link:</label>
-            <input type="text" id="item3" name="item3">
+        <div class="col-12">
+          <label for="link3" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link3" name="item3" placeholder="Link">
         </div>
-                <div class="field">
-            <label for="item4">Link:</label>
-            <input type="text" id="item4" name="item4">
+        <div class="col-12">
+          <label for="link4" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link4" name="item4" placeholder="Link">
         </div>
-        <div class="field">
-            <label for="item5">Link:</label>
-            <input type="text" id="item5" name="item5">
+        <div class="col-12">
+          <label for="link5" class="form-label">Link</label>
+          <input type="text" class="form-control" id="link5" name="item5" placeholder="Link">
         </div>
-        <input type="submit" name="acao" value="Enviar">
-    </form>
+          <button type="submit" class="btn btn-primary" id="botaocriarlista" name="acao">Criar Lista</button>
+      </form>
+    </div>
+  </div>
 {%endblock%}

@@ -1,0 +1,277 @@
+body{
+background-color: #b556b2;
+
+}
+
+h1{
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.navbar{
+  background-color: #b556b2;
+  padding-left: 5rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
+
+.container-fluid{
+  padding: 2% 0%
+}
+
+/* Navigation Bar */
+
+#navbar-logo{
+  height: 80px;
+}
+
+.navbar{
+  padding-bottom: 0.5rem;
+}
+
+.navbar-brand{
+  font-family: 'Lobster', cursive;
+  font-size: 2.2rem;
+}
+
+.nav-item{
+  padding: 0 0.3rem;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Heading */
+
+.first-section{
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+  background-color: #3750BE
+}
+
+/* below-navbar */
+.below-navbar{
+  background-color: white;
+}
+
+/* Carousel Section */
+.carousel-item{
+  height: 600px;
+}
+
+/* table-list */
+.table-list{
+  .background-color: black;
+}
+
+/* Features Section */
+#features{
+  padding: 7% 15%;
+}
+
+.feature-box{
+  text-align: center;
+  padding: 4%
+}
+
+/* Symbols Section */
+.icon{
+  color: #ff824c;
+  padding-bottom: 4%
+}
+
+.icon:hover{
+  color: white;
+}
+
+.criarlista{
+  padding-bottom: 70px;
+}
+
+.card{
+  margin-left: 30px;
+}
+
+#botaocriarlista{
+  position: absolute;
+  margin:2% 0%;
+}
+
+.form-select{
+  right: 10px;
+}
+
+/*Lista do perfil*/
+@import "compass/css3";
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#li-perfil {
+  font: 200 25px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+#li-perfil:last-child {
+  border: none;
+}
+
+#li-perfil a {
+  text-decoration: none;
+  color: #000;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+#li-perfil a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+/* Página do usuário */
+
+.perfil-top-section{
+  padding: 3% 5%;
+}
+
+#bemvindo{
+  text-align: justify;
+  margin-top: 28px;
+  margin-right: 30px;
+}
+
+.fotodoperfil{
+  max-width: 100px;
+  height: 100px;
+  border-radius: 50%;
+ }
+
+/* Footer Section */
+
+.white-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 3%
+}
+
+.social-icon {
+  margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+
+  #title {
+    text-align: center;
+  }
+
+  #footer{
+    text-align: center;
+  }
+
+}
+
+.body-login{
+  min-height: 100vh;
+  background-image: linear-gradient(120deg,#3498db,#8e44ad);
+}
+
+.login-form{
+  width: 360px;
+  background: #f1f1f1;
+  height: 580px;
+  padding: 80px 40px;
+  margin: 100px 0px;
+  border-radius: 60px;
+  position: relative;
+  transform: translate(110%, -20%);
+}
+
+.login-form p{
+  text-align: center;
+  margin-bottom: 60px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.txspace{
+  border-bottom: 2px solid #3750BE;
+  position: relative;
+  margin: 30px 0;
+}
+
+.txspace input{
+  font-size: 15px;
+  color: #333;
+  border: none;
+  width: 100%;
+  outline: none;
+  background: none;
+  padding: 0 5px;
+  height: 40px;
+}
+
+.txspace span::before{
+  content: attr(data-placeholder);
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: .5s;
+}
+
+.focus + span::before{
+  top: -5px;
+}
+.focus + span::after{
+  width: 100%;
+}
+
+.logbtn{
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none;
+  background: linear-gradient(120deg,#3750BE,#A058AE,#3750BE);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+  margin-bottom: 60px;
+  opacity: 0.5;
+}
+
+.logbtn:hover{
+  background-position: right;
+}
+
+.bottom-text{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.container-form {
+  width: 500px;
+  clear: both;
+}
+
+.container-form input {
+  width: 100%;
+  clear: both;
+}

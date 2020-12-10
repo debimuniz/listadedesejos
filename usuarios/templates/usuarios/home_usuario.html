@@ -3,13 +3,26 @@
 {%block  title%}Home {%endblock%}
 
 {% block content %}
-    <h1>Seja bem vindo(a), {{ usuario.nome }}</h1><br>
-    {% if usuario.foto %}
-    <center><img src="{{ usuario.foto.url }}" style="max-width: 250px; height: auto;"></center>
-    {% endif %}
-    <br>
-    <h3 style="color:white">
-        Para visualizar suas listas, <a href="/listas/listar_listas/">clique aqui!</a>
-    </h3>
-    <br>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+          {% if usuario.foto %}
+        <img class="fotodoperfil" src="{{ usuario.foto.url }}" alt="First slide" align="left">
+          {% endif %}
+        <h4>Perfil de {{ usuario.nome }}</h4>
+      </div>
+      <div class="form-floating">
+        <div class="col-6 verticalRule">
+            <h4>Listas Criadas:</h4>
+          {% for lista in listas %}
+          <ul>
+            <li id ="li-perfil"><a href="/listas/visualizar_lista/{{lista.id}}">{{ lista.nome }}</a></li>
+          </ul>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 {%endblock%}

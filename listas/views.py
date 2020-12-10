@@ -24,8 +24,8 @@ def add_lista(request):
     if request.method == 'GET':
         return render(request, 'listas/add_lista.html')
     elif request.method == 'POST':
-        username = Usuario.objects.get(login=request.session['username'])
-        user_id = username.id
+        usuario = Usuario.objects.get(login=request.session['username'])
+        user_id = usuario.id
         nome = request.POST['nome']
         item1 = request.POST['item1']
         item2 = request.POST['item2']
@@ -34,7 +34,12 @@ def add_lista(request):
         item5 = request.POST['item5']
         lista = Lista(user_id=user_id, nome=nome, item1=item1, item2=item2, item3=item3, item4=item4, item5=item5)
         lista.save()
-        return HttpResponseRedirect('/listas/listar_listas')
+        listas = Lista.objects.filter(user_id=user_id)
+        context = {
+            'usuario': usuario,
+            'listas': listas
+        }
+        return render(request, 'usuarios/home_usuario.html' , context)
 
 
 def editar_lista(request, id):
@@ -58,12 +63,25 @@ def editar_lista(request, id):
         lista.item4 = item4
         lista.item5 = item5
         Lista.save(lista)
-        return HttpResponseRedirect('/listas/listar_listas')
+        usuario = Usuario.objects.get(login=request.session['username'])
+        user_id = usuario.id
+        listas = Lista.objects.filter(user_id=user_id)
+        context = {
+            'usuario': usuario,
+            'listas': listas
+        }
+        return render(request, 'usuarios/home_usuario.html', context)
 
 
 def deletar_lista(request, id):
     if request.method == 'GET':
         lista = Lista.objects.get(id=id)
         lista.delete()
-
-    return HttpResponseRedirect('/listas/listar_listas')
+        usuario = Usuario.objects.get(login=request.session['username'])
+        user_id = usuario.id
+        listas = Lista.objects.filter(user_id=user_id)
+        context = {
+            'usuario': usuario,
+            'listas': listas
+        }
+        return render(request, 'usuarios/home_usuario.html', context)

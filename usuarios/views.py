@@ -68,4 +68,10 @@ def deletar_usuario(request, user_id):
 
 def home_usuario(request):
     usuario = Usuario.objects.get(login=request.session['username'])
-    return render(request, 'usuarios/home_usuario.html', context={'usuario': usuario})
+    user_id = usuario.id
+    listas = Lista.objects.filter(user_id=user_id)
+    context = {
+        'usuario': usuario,
+        'listas': listas
+    }
+    return render(request, 'usuarios/home_usuario.html', context)
